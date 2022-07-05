@@ -41,3 +41,22 @@ button:hover {
 button:active {
     background: rgba(246, 211, 247, 0.835);
 }
+/* .movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    align-items: space-between;
+}
+
+.movies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+.movie-item {
+    margin-bottom: 10px;
+} */
