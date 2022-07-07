@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseCounter } from "../redux/actions";
+import { increaseCounter, getUsers } from "../redux/actions";
 const Counter = () => {
     const { counter } = useSelector((state) => state.counterReducer);
-
+    const { users } = useSelector((state) => state.counterReducer);
     const dispatch = useDispatch();
-    const handleIncrease = () => {
-        dispatch(increaseCounter());
-    };
-    const handleDecrease = () => {};
+    // const handleIncrease = () => {
+    //     dispatch(increaseCounter());
+    // };
+    useEffect(() => {
+        dispatch(getUsers());
+    }, []);
+
+    // const handleGetUsers = () => {
+    //     dispatch(getUsers());
+    // };
     return (
-        <div className="counter-container">
-            <button onClick={() => handleIncrease()}>+</button>
-            <h1>{counter}</h1>
-            <button onClick={() => handleDecrease()}>-</button>
+        <div>
+            {/* <button>+</button> */}
+            {users.map((user) => {
+                return <h1>{user.name}</h1>;
+            })}
+            {/* <h1>{counter}</h1> */}
+            {/* <button>-</button> */}
         </div>
     );
 };
